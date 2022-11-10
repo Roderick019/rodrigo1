@@ -18,7 +18,7 @@ import {
   View,
 } from 'react-native';
 
-import { TextInput } from 'react-native-paper';
+import { TextInput, Title } from 'react-native-paper';
 import { Button } from 'react-native-paper';
 import {
   Colors,
@@ -66,16 +66,21 @@ const App=() =>  {
   return (
     <View>
       <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+        barStyle={isDarkMode ? 'dark-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
         <Header />
-
+        <Title> TextInput (email) </Title>
         <TextInput label="Email" placeholder ='Escriu el teu email' />
-
+        <Title> Button (amb text i icona) </Title>
+        <Button icon="alien" mode="contained" onPress={() => console.log('Pressed')}>Alien</Button>
+        <Button icon="alien" mode="contained" onPress={() => console.log('Pressed')}>Alien</Button>
+        <Button icon="alien"  onPress={() => console.log('Pressed')}>Alien</Button>
+        <Button icon="alien"  onPress={() => console.log('Pressed')}>Alien</Button>
+        <Title> Swich Necessites un descans ? </Title>
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
