@@ -7,7 +7,7 @@
  */
 
 import { React, useState } from 'react';
-import { TextInput, Title, Switch,Surface,Chip,Button } from 'react-native-paper';
+import { Provider as PaperProvider,TextInput, Title, Switch,Surface,Chip,Button } from 'react-native-paper';
 import {
   SafeAreaView,
   ScrollView,
@@ -54,7 +54,9 @@ const Section = ({ children, title }) => {
     </View>
   );
 };
-
+const saluda =()=>{
+  return <Text style={{ color : 'blue',fontSize:25 }} >Hola mundo</Text>
+};
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
@@ -66,7 +68,7 @@ const App = () => {
 
   return (
     <PaperProvider>
-      
+      {saluda()}
     </PaperProvider>
     
   );
