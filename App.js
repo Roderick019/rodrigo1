@@ -54,8 +54,9 @@ const Section = ({ children, title }) => {
     </View>
   );
 };
-const saluda =()=>{
-  return <Text style={{ color : 'blue',fontSize:25 }} >Hola mundo</Text>
+const saluda =(nombre)=>{
+
+  return <Text style={{ color : 'blue',fontSize:25 }} >Hola {nombre}</Text>
 };
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -65,10 +66,10 @@ const App = () => {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
-
+  const isPersona = false;
   return (
     <PaperProvider>
-      {saluda()}
+      {(isPersona)?saluda('Manel Viel') : saluda('Rodrigo')}
     </PaperProvider>
     
   );
@@ -78,9 +79,6 @@ const App = () => {
 
 
 const styles = StyleSheet.create({
-
-
-
 
   sectionContainer: {
     marginTop: 32,
