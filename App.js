@@ -58,6 +58,15 @@ const saluda =(nombre)=>{
 
   return <Text style={{ color : 'blue',fontSize:25 }} >Hola {nombre}</Text>
 };
+const saluda2 =()=>{
+
+  return(
+  <View>
+    {saluda('Juan')}
+    {saluda('Pedro')}
+  </View>
+  );
+};
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
@@ -69,7 +78,7 @@ const App = () => {
   const isPersona = false;
   return (
     <PaperProvider>
-      {(isPersona)?saluda('Manel Viel') : saluda('Rodrigo')}
+      {(isPersona)?saluda('Manel Viel') : saluda2()}
     </PaperProvider>
     
   );
