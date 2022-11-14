@@ -57,8 +57,6 @@ const Section = ({ children, title }) => {
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
-  const [descans, setDescans] = useState(false);
-  const cambiarElSwitch = () => setDescans(!descans);
 
 
   const backgroundStyle = {
@@ -67,35 +65,10 @@ const App = () => {
 
 
   return (
-    <View>
-      <StatusBar
-        barStyle={isDarkMode ? 'dark-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View>
-          <Title> TextInput (email) </Title>
-          <TextInput label="Email" placeholder='Escriu el teu email' />
-          <Title> Button (amb text i icona) </Title>
-          <Button icon="alien" mode="contained" onPress={() => console.log('Pressed')}>Alien</Button>
-          <Button icon="alien" mode="contained" Text style={'black'} onPress={() => console.log('Pressed')}>Alien</Button>
-          <Button icon="alien" mode="text"onPress={() => console.log('Pressed')}>Alien</Button>
-          <Button icon="alien" mode="outlined"onPress={() => console.log('Pressed')}>Alien</Button>
-          <Title> Swich Necessites un descans ? </Title>
-          <Switch color='red' value={descans} onValueChange={cambiarElSwitch} />
-          <Title> Bottons dins d'un component Surface ? </Title>
-          <Surface style={styles.surface} elevation={4}><Button icon="alien" mode="contained" onPress={() => console.log('Pressed')}>Alien</Button></Surface>
-          <Title> Provant Chips </Title>
-          <View>
-            <Chip icon="web" onPress={() => console.log('Pressed')}>Internet</Chip>
-            <Chip icon="wifi" onPress={() => console.log('Pressed')}>Wifi</Chip>
-          </View>
-        </View>
-      </ScrollView>
-    </View>
+    <PaperProvider>
+      
+    </PaperProvider>
+    
   );
 };
 
